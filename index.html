@@ -32,7 +32,11 @@
   </body>
 <script>
   document.body.addEventListener('click', () => {
-    document.body.style.setProperty('--primary-color', 'pink');
+    setInterval(()=> {
+      document.body.style.setProperty('--primary-color', `${getComputedStyle(document.body).
+      getPropertyValue("--primary-color") === 'aqua'? 'pink' : 'aqua'}`);
+    }, 2000)
+
   })
 </script>
 </html>
