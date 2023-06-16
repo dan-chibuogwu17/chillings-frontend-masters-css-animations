@@ -1,11 +1,13 @@
 @import './styles/base.scss';
 :root {
 --primary-color: aqua;
+--duration: 1s;
+--easing: cubic-bezier(.5, 0, .5, 1);
 }
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 5vmin;
-  background-color: var(--primary-color);
+  background-color: orange;
   transition: background-color 3s ease;
 }
 
@@ -15,6 +17,11 @@ a {
 
 h1 {
   margin: 0;
+  color: var(--primary-color);
+  transition: all 0.3s;
+  &:hover {
+    font-size: 5vw;
+  }
 }
 
 small {
@@ -31,7 +38,7 @@ ul {
   width: 5vmin;
   border-radius: 50%;
   background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
-  animation: slide-right 1s linear infinite;
+  animation: slide-right var(--duration) var(--easing) infinite;
 }
 @keyframes slide-right {
 from {
