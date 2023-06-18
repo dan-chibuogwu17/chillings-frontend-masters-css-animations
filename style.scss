@@ -38,7 +38,16 @@ ul {
   width: 5vmin;
   border-radius: 50%;
   background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
-  animation: slide-right var(--duration) var(--easing) infinite;
+//   animation: slide-right var(--duration) var(--easing) infinite;
+ left: 50vw;
+//  transition-property: background-color, scale;
+//  transition-duration: 0.5s;
+//  transition-timing-function: linear, ease-in-out;
+transition: all 1s 0.5s ease-in-out;
+    &:hover {
+     background: blue;
+     scale: 2;
+    }
 }
 @keyframes slide-right {
 from {
