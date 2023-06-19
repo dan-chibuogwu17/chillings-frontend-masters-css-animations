@@ -39,8 +39,8 @@ body {
   outline: none;
   transition-property: border-color;
   transition-duration: 0.3s;
-
 }
+
 
 .ui-button {
   grid-area: button;
@@ -53,7 +53,6 @@ body {
   background-color: var(--color);
   transition-property: background-color, opacity, translate;
   transition-duration: 0.3s;
-
    &:hover {
     opacity: 0.7;
     }
