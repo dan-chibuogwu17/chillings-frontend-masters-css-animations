@@ -7,7 +7,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 5vmin;
-  background-color: orange;
+  background-color: skyblue;
   transition: background-color 3s ease;
 }
 
@@ -18,6 +18,7 @@ a {
 h1 {
   margin: 0;
   color: var(--primary-color);
+  transition: color 1s ease;
 }
 
 small {
@@ -30,29 +31,23 @@ ul {
 }
 
 .ball {
- height: 10vmin;
- width: 10vmin;
- border-radius: 50%;
- background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
- left: 30vw;
- animation-name: move-like-a-square;
- animation-duration: 2s;
- animation-fill-mode: backwards;
- animation-iteration-count: 5;
+  height: 5vmin;
+  width: 5vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
+  left: 50vw;
+  --duration: .4s;
+  --stagger: 0.2s;
+  --interval:  calc(var(--duration) - var(--stagger));
+  animation: move-right var(--duration) calc(var(--interval) * var(--i)) both;
+}
 
-}
-@keyframes move-like-a-square {
-from, to {
-translate: 0;
-}
-25% {
-animation-timing-function: linear;
-translate: 20vw 0;
-}
-50%{
-translate: 20vw 20vw;
-}
-75% {
-translate: 0 20vw;
-}
-}
+ @keyframes move-right {
+ from {
+ translate: none;
+ }
+ to {
+ translate: 25vw 0;
+ }
+ }
+
