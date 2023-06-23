@@ -10,6 +10,13 @@ body {
   background-color: skyblue;
   transition: background-color 3s ease;
 }
+#app {
+  --transparency: 1;
+  &[data-state="loading"] {
+    --transparency: 0.3;
+  }
+}
+
 
 a {
   color: blue;
@@ -40,6 +47,7 @@ ul {
   --stagger: 0.2s;
   --interval:  calc(var(--duration) - var(--stagger));
   animation: move-right var(--duration) calc(var(--interval) * var(--i)) both;
+  opacity: var(--transparency);
 }
 
  @keyframes move-right {
