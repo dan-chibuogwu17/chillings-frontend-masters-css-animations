@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="style.scss" />
   </head>
   <body>
-    <div class="circle"></div>
+    <div class="circle" data-dan="wow"></div>
   </body>
   <script>
     const circleEl = document.querySelector('.circle');
 
-    // ...
+    document.addEventListener('pointermove', (e) => {
+        const { clientX, clientY } = e;
+
+        circleEl.style.setProperty("--x", clientX);
+        circleEl.style.setProperty("--y", clientY);
+    })
   </script>
 </html>

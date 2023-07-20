@@ -1,8 +1,22 @@
 @import '../styles/base.scss';
 
 .circle {
-  height: 5vmin;
-  width: 5vmin;
+--x-px: calc(var(--x) * 1px);
+--y-px: calc(var(--y) * 1px);
+  height: 10vmin;
+  width: 10vmin;
   border-radius: 50%;
   background-color: blue;
+  translate: var(--x-px) var(--y-px);
+  transition: 0.2s;
+  &:before {
+  content: attr(style);
+  background-color: black;
+  position: absolute;
+  top: 100%;
+  margin: 20px 0;
+  left: 0;
+  color: white;
+  white-space: nowrap;
+  }
 }
